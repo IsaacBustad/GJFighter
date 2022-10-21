@@ -79,10 +79,13 @@ public class PlayerControler : MonoBehaviour
 
     protected void CheckForDash(InputAction.CallbackContext context)
     {
-        if(horizontal > 0 && context.started)
+        Debug.Log("test");
+        if (horizontal > 0 && context.started)
         {
+            Debug.Log("found");
             if (context.startTime - lastRightTap < tapTimeout)
             {
+                Debug.Log("execute");
                 speed = sprintSpeed;
             }
             lastRightTap = context.startTime;
