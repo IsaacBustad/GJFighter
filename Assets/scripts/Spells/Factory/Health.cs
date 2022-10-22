@@ -19,4 +19,9 @@ public abstract class Health : MonoBehaviour
     public float MaxHealth { get { return maxHealth; } }
     public float CurHealth { get { return curHealth; } }
 
+    public void ToFullHealth()
+    {
+        curHealth = maxHealth;
+    }
+
 }

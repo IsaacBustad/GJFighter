@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;
-   // public Transform groundCheck;
+    // public Transform groundCheck;
     //public LayerMask groundLayer;
 
     private float horizontal;
@@ -26,14 +26,19 @@ public class PlayerControler : MonoBehaviour
     private double lastRightTap;
     private double tapTimeout = 1;
 
+    public bool headLeft = false;
+
+    // spells
+    [SerializeField] GameObject firingPT;
+    [SerializeField] SpellFactory spell1;
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
     }
 
     public void CastSpell(InputAction.CallbackContext context)
@@ -46,6 +51,11 @@ public class PlayerControler : MonoBehaviour
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
+    }
+
+    public void Attack(InputAction.CallbackContext context)
+    {
+       spell1.SpawnSpell(firingPT.transform.position, headLeft);
     }
 
     
