@@ -95,5 +95,5 @@ public class Stanima : MonoBehaviour
 
     // accessors
     public float CurStamina { get { return curStamina; } }
-
+    public float MaxStamina { get { return maxStamina; } }
 }
