@@ -17,7 +17,7 @@ public class ManaBar : MonoBehaviour
     void Update()
     {
         float changeAmt;
-        changeAmt = playerMana.curStamina / playerMana.maxStamina;
+        changeAmt = playerMana.CurStamina / playerMana.MaxStamina;
         //strtScale = gameObject.transform.localScale.x;
         manaScale = strtManaScale * changeAmt;
 
