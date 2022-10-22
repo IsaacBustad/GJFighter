@@ -6,7 +6,7 @@ public class HealthBar : MonoBehaviour
 {
     private float hBScale;
     private float strtScale;
-    [SerializeField]private Health3 plyerHealth;
+    [SerializeField]private PlayerHealth plyerHealth;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
     public void UpdateHB()
     {
         float changeAmt;
-        changeAmt = plyerHealth.currentHealth / plyerHealth.StartingHealth;
+        changeAmt = plyerHealth.CurHealth / plyerHealth.MaxHealth;
         //strtScale = gameObject.transform.localScale.x;
         hBScale = strtScale * changeAmt;
 
