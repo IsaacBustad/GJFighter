@@ -31,6 +31,11 @@ public class PlayerControler : MonoBehaviour
     // spells
     [SerializeField] GameObject firingPT;
     [SerializeField] SpellFactory spell1;
+
+    private void Start()
+    {
+        rb.freezeRotation = true;
+    }
     void Update()
     {
 

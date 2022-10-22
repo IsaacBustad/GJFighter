@@ -40,18 +40,21 @@ public class Spell : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("collide");
         if (collision.gameObject.layer == isPlayer)
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            DealDammage(collision.gameObject.GetComponent<PlayerHealth>());
         }
         if (collision.gameObject.layer == isEnemy)
         {
-            
+            DealDammage(collision.gameObject.GetComponent<EnemyHealth>());
+
         }
     }
     protected void DealDammage(Health aHealth)
     {
         aHealth.TakeDamage(damage);
+        AddToPool();
     }
 
 
