@@ -12,7 +12,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        strtHealthScale = gameObject.transform.localScale.x;
+        strtScale = gameObject.transform.localScale.x;
     }
 
     public void UpdateHB()
@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour
         changeAmt = plyerHealth.CurHealth / plyerHealth.MaxHealth;
 
         //strtScale = gameObject.transform.localScale.x;
-        hBScale = strtHealthScale * changeAmt;
+        hBScale = strtScale * changeAmt;
 
         // change health bar scale
         gameObject.transform.localScale = new Vector3(hBScale, 1, 1);
