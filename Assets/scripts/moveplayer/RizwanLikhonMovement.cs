@@ -31,28 +31,31 @@ public class RizwanLikhonMovement : MonoBehaviour
 
     private void Update()
     {
-        
 
-        float horizontalInput = Input.GetAxis("Horizontal");
+
+        float horizontalInput;
         body.velocity = new Vector2(horizontalInput * runspeed, body.velocity.y);
         //bc.size = new Vector2(0.4553795f, 0.4839265f);
 
         //flip player when moving left-right
 
-        if (horizontalInput > 0.01f)
+        if (horizontalInput=Input.Getkey(KeyCode.D)  > 0.01f)
             transform.localScale = new Vector3(130, 170, 1);
-        else if (horizontalInput < -0.01f)
+        else if (horizontalInput = Input.Getkey(KeyCode.A) < -0.01f)
             transform.localScale = new Vector3(-130, 170, 1);
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        /*
+        if (horizontalInput = Input.Getkey(KeyCode.K) > 0.01f)
+            transform.localScale = new Vector3(130, 170, 1);
+        else if (horizontalInput = Input.Getkey(KeyCode.L) < -0.01f)
+            transform.localScale = new Vector3(-130, 170, 1);*/
+
+        if ((Input.GetKey(KeyCode.Space))||(Input.GetKey(KeyCode.Enter)) && grounded)
         {
             Jump();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && grounded)
-        {
-            Walk();
-        }
+        
         if(Input.GetKeyDown(KeyCode.C) && grounded)
         {
             Crouch();
@@ -64,9 +67,14 @@ public class RizwanLikhonMovement : MonoBehaviour
             bc.offset = new Vector2(0.07783809f, -0.02496272f);
 
         }
-        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.I))
         {
-            Attack();
+            NormalAttack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.K))
+        {
+            UltimateAttack();
         }
 
 
@@ -87,25 +95,11 @@ public class RizwanLikhonMovement : MonoBehaviour
         grounded = false;
 
     }
-    //Walk Methods
-    private void Walk()
-    {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * walkspeed, body.velocity.y);
-
-        //flip player when moving left-right
-
-        if (horizontalInput > 0.01f)
-            transform.localScale = new Vector3(130, 170, 1);
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-130, 170, 1);
-        anim.SetTrigger("walk");
-        anim.ResetTrigger("walk");
-
-    }
+    
+   
     private void Crouch()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput;
         body.velocity = new Vector2(horizontalInput * crouchspeed, body.velocity.y);
         bc.size = new Vector2(0.4553795f, 0.25394f);
         bc.offset = new Vector2(0.0778380f, -0.139956f);
@@ -114,12 +108,11 @@ public class RizwanLikhonMovement : MonoBehaviour
 
         //flip player when moving left-right
 
-        if (horizontalInput > 0.01f)
+        if (horizontalInput = Input.Getkey(KeyCode.D) > 0.01f)
             transform.localScale = new Vector3(130, 170, 1);
-        else if (horizontalInput < -0.01f)
+        else if (horizontalInput = Input.Getkey(KeyCode.A) < -0.01f)
             transform.localScale = new Vector3(-130, 170, 1);
-        anim.SetTrigger("crouch");
-        
+
         //anim.ResetTrigger("crouch");
         /*
         if(Input.GetKeyUp(KeyCode.C))
@@ -127,7 +120,7 @@ public class RizwanLikhonMovement : MonoBehaviour
             anim.ResetTrigger("crouch");
         }*/
     }
-    private void Attack()
+    private void NormalAttack()
     {
         if(!grounded)
         {
@@ -136,6 +129,17 @@ public class RizwanLikhonMovement : MonoBehaviour
         }
         anim.SetTrigger("attack");
         attacking=true;
+        //anim.ResetTrigger("attack");
+    }
+    private void UltimateAttack()
+    {
+        if (!grounded)
+        {
+            body.gravityScale = 110;
+
+        }
+        anim.SetTrigger("attack");
+        attacking = true;
         //anim.ResetTrigger("attack");
     }
     //When Entering Collision
@@ -156,26 +160,9 @@ public class RizwanLikhonMovement : MonoBehaviour
 
         }
 
-        else if (collision.gameObject.tag == "SFG")
-        {
-            body.gravityScale = 500;
-            body.mass = 1000;
-            grounded = true;
-
-        }
-        else if (collision.gameObject.tag == "BFG")
-        {
-            body.gravityScale = 500;
-            body.mass = 1000;
-            grounded = true;
-        }
-        if (collision.gameObject.tag == "IW")
-        {
-            body.gravityScale = 76;
-            body.mass = 10;
-            grounded = false;
-
-        }
+       
+        
+        
 
     }
     //When staying with other game object with collision
@@ -188,31 +175,7 @@ public class RizwanLikhonMovement : MonoBehaviour
 
 
         }
-        else if (collision.gameObject.tag == "SFG")
-        {
-            body.gravityScale = 500;
-            body.mass = 1000;
-            grounded = true;
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y);
-
-        }
-        else if (collision.gameObject.tag == "BFG")
-        {
-            body.gravityScale = 500;
-            body.mass = 1000;
-            grounded = true;
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y);
-
-
-        }
-        if (collision.gameObject.tag == "IW")
-        {
-            body.gravityScale = 1400;
-            body.mass = 1000;
-            grounded = false;
-
-        }
-
+        
 
     }
     // after exiting the collision with other object
@@ -225,24 +188,7 @@ public class RizwanLikhonMovement : MonoBehaviour
 
         }
 
-        else if (collision.gameObject.tag == "SFG")
-        {
-            body.gravityScale = 67;
-
-            grounded = true;
-        }
-        else if (collision.gameObject.tag == "BFG")
-        {
-            body.gravityScale = 67;
-
-            grounded = true;
-        }
-        if (collision.gameObject.tag == "IW")
-        {
-            body.gravityScale = 67;
-            body.mass = 10;
-            grounded = false;
-        }
+       
         else if (collision.gameObject.tag == "Ground")
         {
             grounded = false;
