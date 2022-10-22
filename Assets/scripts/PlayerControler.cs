@@ -81,6 +81,7 @@ public class PlayerControler : MonoBehaviour
     {
         if(horizontal > 0 && context.started)
         {
+            Debug.Log("found");
             if (context.startTime - lastRightTap < tapTimeout)
             {
                 speed = sprintSpeed;
