@@ -22,24 +22,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "RightTap",
-                    "type": "Button",
-                    "id": "199bdf69-7574-4141-97b5-aa5962000d20",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "LeftTap",
-                    "type": "Button",
-                    "id": "c783ea3f-ff5e-4653-a752-6f39841bc161",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -50,6 +32,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Kebord1",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8014e11c-a454-4f48-8953-667f58a4cc2f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controler",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -111,23 +104,12 @@
                 },
                 {
                     "name": "",
-                    "id": "4332beab-ea48-4c05-95dc-fb2a454ff6e3",
-                    "path": "<Keyboard>/d",
+                    "id": "1e124de4-a280-47e9-a923-2b86072c5f9a",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Kebord1",
-                    "action": "RightTap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a1259054-2794-48dc-9b9b-37dca20d2678",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Kebord1",
-                    "action": "LeftTap",
+                    "groups": "Controler",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
