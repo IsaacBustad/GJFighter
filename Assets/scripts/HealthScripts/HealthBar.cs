@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        strtScale = gameObject.transform.localScale.x;
+        strtHealthScale = gameObject.transform.localScale.x;
     }
 
     public void UpdateHB()
