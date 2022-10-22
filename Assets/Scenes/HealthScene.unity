@@ -217,7 +217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 898117237}
   - component: {fileID: 898117236}
-  - component: {fileID: 898117238}
   m_Layer: 0
   m_Name: uf_bar_b_health_p1
   m_TagString: Untagged
@@ -292,19 +291,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &898117238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898117235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc40ee7d8e49d84fb786c587edb030a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plyerHealth: {fileID: 0}
 --- !u!1 &1197646108
 GameObject:
   m_ObjectHideFlags: 0
