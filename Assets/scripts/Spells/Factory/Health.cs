@@ -19,6 +19,11 @@ public abstract class Health : MonoBehaviour
     public float MaxHealth { get { return maxHealth; } }
     public float CurHealth { get { return curHealth; } }
 
+    public virtual void HealDamage(float aDamage)
+    {
+        curHealth += aDamage;
+    }
+
     public void ToFullHealth()
     {
         curHealth = maxHealth;
