@@ -22,6 +22,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CastSpell1",
+                    "type": "Button",
+                    "id": "ac49e5b1-8cc3-43c0-913a-0bf09d93b096",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CastSpell2",
+                    "type": "Button",
+                    "id": "05e2b567-10eb-4d43-acda-229dcd64ca1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CastSpell3",
+                    "type": "Button",
+                    "id": "14f79bf7-989d-4c40-be66-14b4a9a47d74",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CastSpell4",
+                    "type": "Button",
+                    "id": "9c543403-e60c-436f-aa13-af60d5e9b226",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -110,6 +146,50 @@
                     "processors": "",
                     "groups": "Controler",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e712275-b535-46ff-b906-9842cb05306b",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kebord1",
+                    "action": "CastSpell1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "abf4cb7e-a38e-4ec2-9c18-1162d6d4f059",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kebord1",
+                    "action": "CastSpell2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "378acc12-9312-470b-8b0f-79ac61894da6",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kebord1",
+                    "action": "CastSpell3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36a108b7-4b5b-4263-b11e-303133831ab6",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kebord1",
+                    "action": "CastSpell4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

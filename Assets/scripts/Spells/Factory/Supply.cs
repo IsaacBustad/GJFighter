@@ -20,7 +20,7 @@ public abstract class Supply : MonoBehaviour
     [SerializeField] protected GameObject effectGO;
 
 
-    protected Package package = null;
+    //protected Package package = null;
     protected int isPlayer = 8;
 
     protected abstract void OnCollisionEnter(Collision collision);
@@ -28,23 +28,23 @@ public abstract class Supply : MonoBehaviour
 
     protected void CollectSup()
     {
-        SupEffect seffect = effectGO.GetComponent<SupEffect>();
-        seffect.CollectSup();
+        //SupEffect seffect = effectGO.GetComponent<SupEffect>();
+        //seffect.CollectSup();
 
         AddToPool();
     }
 
     protected void DammageSup()
     {
-        SupEffect seffect = effectGO.GetComponent<SupEffect>();
-        seffect.DammageSup();
+        //SupEffect seffect = effectGO.GetComponent<SupEffect>();
+        //seffect.DammageSup();
         AddToPool();
     }
 
     protected void AddToPool() 
     { 
         Pool.AddToPool(this);
-        package.RevSups(gameObject);
+        //package.RevSups(gameObject);
         gameObject.SetActive(false);
     }
 
@@ -61,5 +61,5 @@ public abstract class Supply : MonoBehaviour
     public int Units { get { return units; } }
     public Sprite Sprite{ get { return sprite; } }
     public PoolGeneric<Supply> Pool { get { return pool; } set { pool = value; } }
-    public Package Package{ get { return package; } set { package = value; } }
+    //public Package Package{ get { return package; } set { package = value; } }
 }
