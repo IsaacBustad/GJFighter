@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Health3 : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
+    [SerializeField] private float startingHealth = 100;
     public float currentHealth { get; private set; }
     private Animator ani;
     private bool dead;
@@ -26,9 +26,15 @@ public class Health3 : MonoBehaviour
             if (!dead)
             {
                 ani.SetTrigger("die");
-                GetComponent<RizwanLikhonMovement>().enabled= false;
+                //GetComponent<RizwanLikhonMovement>().enabled= false;
                 dead = true;
             }
         }
     }
+
+    public float StartingHealth
+    {
+        get { return this.currentHealth; }
+    }
+
 }
