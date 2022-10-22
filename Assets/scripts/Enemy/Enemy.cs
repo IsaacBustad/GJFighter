@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected PoolGeneric<Enemy> pool;
+    protected PoolGeneric<Enemy> pool = new PoolGeneric<Enemy>();
     protected int points;
     public Score score;
     public bool headLeft = true;
@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
     //protected Package package = null;
     protected int isPlayer = 10;
 
-    
+
+
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == isPlayer)
