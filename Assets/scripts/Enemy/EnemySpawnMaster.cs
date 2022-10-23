@@ -42,6 +42,7 @@ public class EnemySpawnMaster : MonoBehaviour
 
         NextWave();
         StagerSpawn();
+        EndGame();
     }
 
     protected void NextWave()
@@ -78,6 +79,15 @@ public class EnemySpawnMaster : MonoBehaviour
             enemiesForWave--;
         }
         
+        
+    }
+
+    protected void EndGame()
+    {
+        if (enemiesForWave < 100)
+        {
+
+        }
     }
 
     

@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
         strtScale = gameObject.transform.localScale.x;
     }
 
-    public void UpdateHB()
+    public void Update()
     {
         float changeAmt;
 
@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
         hBScale = strtScale * changeAmt;
 
         // change health bar scale
-        gameObject.transform.localScale = new Vector3(hBScale, 1, 1);
+        gameObject.transform.localScale = new Vector3(hBScale, 80, 80);
 
     }
 
