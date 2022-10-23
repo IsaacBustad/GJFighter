@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: -4796206511142234244}
   - component: {fileID: 2378020826754481077}
   - component: {fileID: 6052497973872965655}
+  - component: {fileID: 2143961918814330318}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -272,6 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8888849007326710949}
   headLeft: 0
+  spellCost: 10
   firingPT: {fileID: 5703831810614925456}
   spell1: {fileID: 11400000, guid: 6e9c6f30f6fd34a4da4c4501317baa2f, type: 2}
 --- !u!114 &6052497973872965655
@@ -288,3 +290,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   curHealth: 0
+--- !u!114 &2143961918814330318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888849007326710948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2838ee4479dcd447b982a99dbeec976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 100
+  curStamina: 100
+  regenSpeed: 20

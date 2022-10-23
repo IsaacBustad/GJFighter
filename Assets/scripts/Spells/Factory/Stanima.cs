@@ -29,7 +29,7 @@ public class Stanima : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        
+        RegenerateStamina();
     }
 
     protected void StaminaSystem()
@@ -60,14 +60,14 @@ public class Stanima : MonoBehaviour
             curStamina = 0;
         }
 
-        ResetStamDelay();
+        //ResetStamDelay();
 
         return retStam;
     }
 
     protected void RegenerateStamina()
     {
-        if (canRegen && curStamina < maxStamina)
+        if (curStamina < maxStamina)
         {
             curStamina += regenSpeed * Time.deltaTime;
             curStamina = Mathf.Clamp(curStamina, 0, maxStamina);
