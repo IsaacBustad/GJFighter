@@ -35,8 +35,13 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] GameObject firingPT;
     [SerializeField] SpellFactory spell1;
 
+
+    // reset score vars
+    [SerializeField] Score score;
+
     private void Start()
     {
+        score.ClearScore();
         rb.freezeRotation = true;
         stanima = GetComponent<Stanima>();
     }

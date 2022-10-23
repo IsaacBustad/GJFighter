@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 2378020826754481077}
   - component: {fileID: 6052497973872965655}
   - component: {fileID: 2143961918814330318}
+  - component: {fileID: 3983093369042853685}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -305,3 +306,23 @@ MonoBehaviour:
   maxStamina: 100
   curStamina: 100
   regenSpeed: 20
+--- !u!95 &3983093369042853685
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8888849007326710948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d04af83128d23345b109b763b52e995, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
