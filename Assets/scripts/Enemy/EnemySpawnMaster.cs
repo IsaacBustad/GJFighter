@@ -81,7 +81,10 @@ public class EnemySpawnMaster : MonoBehaviour
         
     }
 
-    
+    protected void EndGame()
+    {
+
+    }
 
     
 
