@@ -22,6 +22,6 @@ public class ManaBar : MonoBehaviour
         manaScale = strtManaScale * changeAmt;
 
         // change health bar scale
-        gameObject.transform.localScale = new Vector3(manaScale, 1, 1);
+        gameObject.transform.localScale = new Vector3(manaScale, 80, 80);
     }
 }

@@ -20,7 +20,7 @@ public class Score : ScriptableObject
     }
 
     // functions
-
+    public void ClearScore() { scorePoints = 0; }
 
     // accessors
 }

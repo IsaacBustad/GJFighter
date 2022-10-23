@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;
+    protected Stanima stanima;
     // public Transform groundCheck;
     //public LayerMask groundLayer;
 
@@ -28,6 +29,8 @@ public class PlayerControler : MonoBehaviour
 
     public bool headLeft = false;
 
+    [SerializeField] protected float spellCost = 10;
+
     // spells
     [SerializeField] GameObject firingPT;
     [SerializeField] SpellFactory spell1;
@@ -35,6 +38,7 @@ public class PlayerControler : MonoBehaviour
     private void Start()
     {
         rb.freezeRotation = true;
+        stanima = GetComponent<Stanima>();
     }
     void Update()
     {
@@ -60,7 +64,14 @@ public class PlayerControler : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-       spell1.SpawnSpell(firingPT.transform.position, headLeft);
+        if (context.started)
+        {
+            if (stanima.GiveStamina(spellCost) == spellCost)
+            {
+                spell1.SpawnSpell(firingPT.transform.position, headLeft);
+            }
+        }
+      
     }
 
     
