@@ -9,7 +9,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     protected PoolGeneric<Enemy> pool = new PoolGeneric<Enemy>();
-    protected int points;
+    [SerializeField] protected int points = 5;
     public Score score;
     public bool headLeft = true;
     protected float speed = 6;
@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     //protected Package package = null;
     protected int isPlayer = 10;
+    protected int isBooundry = 8;
 
     protected void FixedUpdate()
     {
@@ -37,10 +38,15 @@ public class Enemy : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(phisDamage);
         }
+        if(collision.gameObject.layer == isBooundry)
+        {
+            AddToPool();
+        }
     }
 
     public void DefeatEnemy()
     {
+        score.ScorePoints = points;
         //SupEffect seffect = effectGO.GetComponent<SupEffect>();
         //seffect.DammageSup();
         AddToPool();
