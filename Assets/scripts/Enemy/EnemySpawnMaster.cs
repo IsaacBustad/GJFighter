@@ -9,10 +9,10 @@ public class EnemySpawnMaster : MonoBehaviour
 {
     // vars
     // delays
-    [SerializeField] protected float timeBtwRnds = 5f;
-    [SerializeField] protected float timeBtwSpawns = 0.3f;
-    [SerializeField] protected float timeToDelay = 1f;
-    [SerializeField] protected float timeToIncrease = 1.5f;
+    [SerializeField] protected float timeBtwRnds = 3f;
+    //[SerializeField] protected float timeBtwSpawns = 0.3f;
+    //[SerializeField] protected float timeToDelay = 1f;
+    [SerializeField] protected float timeToIncrease = 1.2f;
 
     // clock
     // 
@@ -22,7 +22,7 @@ public class EnemySpawnMaster : MonoBehaviour
     // enemies to spawn
     [SerializeField] protected int enemiesToWave = 1;
     [SerializeField] protected int enemiesForWave = 1;
-    [SerializeField] protected float enemyIncrease = 1.5f;
+    [SerializeField] protected int enemyIncrease = 2;
 
     // locations
     [SerializeField] protected List<Transform> spawnPTs;
@@ -36,7 +36,6 @@ public class EnemySpawnMaster : MonoBehaviour
     // functions
     protected void FixedUpdate()
     {
-        timeFromLastSpawn += Time.fixedDeltaTime;
         timeFromLastWave += Time.fixedDeltaTime;
         timeFromLastSpawn += Time.fixedDeltaTime;
 
@@ -53,7 +52,7 @@ public class EnemySpawnMaster : MonoBehaviour
             timeBtwRnds *= timeToIncrease;
             enemiesForWave = enemiesToWave;
 
-            enemiesToWave *= Convert.ToInt32(timeToIncrease * enemiesToWave);
+            enemiesToWave *= enemyIncrease;
         }
 
     }
@@ -63,6 +62,7 @@ public class EnemySpawnMaster : MonoBehaviour
     {
         if (timeFromLastSpawn >= (timeBtwRnds - 0.5f) / enemiesToWave) 
         {
+            timeFromLastSpawn = 0;
             SpawnEnemy();
         }
     }

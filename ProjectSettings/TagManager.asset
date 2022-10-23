@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - isGround
-  - PlayerWall
-  - 
+  - isPlayerWall
+  - isBoundry
   - 
   - isPlayerlayer
   - isEnemy
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 2981325677
+    locked: 0
+  - name: Player
+    uniqueID: 395122399
+    locked: 0
+  - name: Spell
+    uniqueID: 1210997333
     locked: 0
