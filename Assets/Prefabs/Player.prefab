@@ -277,6 +277,7 @@ MonoBehaviour:
   spellCost: 10
   firingPT: {fileID: 5703831810614925456}
   spell1: {fileID: 11400000, guid: 6e9c6f30f6fd34a4da4c4501317baa2f, type: 2}
+  score: {fileID: 11400000, guid: 2fcfb3d16db077846a663bcdf8ee9a4c, type: 2}
 --- !u!114 &6052497973872965655
 MonoBehaviour:
   m_ObjectHideFlags: 0

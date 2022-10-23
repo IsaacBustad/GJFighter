@@ -162,6 +162,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a93fe36e-f2dd-4034-8e0c-e6ec2e4e3caf",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Kebord1",
+                    "action": "CastSpell1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "abf4cb7e-a38e-4ec2-9c18-1162d6d4f059",
                     "path": "<Keyboard>/numpad2",
                     "interactions": "",
